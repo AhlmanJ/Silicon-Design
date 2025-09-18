@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+*,*::before,*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --color-white: #ffffff;
+    --color-heading: #0B0F19;
+    --color-leadText: #0B0F19;
+    --color-paragraph: #565973;
+    --color-navText: #33354D;
+    --color-gradient: linear-gradient(90deg, rgb(99, 102, 241) 0% ,rgb(139, 92, 246)50% ,rgb(217, 70, 239) 100%);
+    --backgroundColor-btn: #6366F1;
+    --backgroundColor-section: #ffffff;
+    --backgroundColor-gray: #F3F6FF; 
+    --backgroundColor-light-hero: radial-gradient(at bottom, rgba(99, 101, 241, 10%) 0%, rgba(219, 70, 239, 5%) 42%, rgba(241, 244, 253, 7%) 83%);
+    --backgroundColor-slider: #9397AD; 
+}
+
+[data-theme="dark"] {
+    --color-white: #ffffff;
+    --color-heading: #ffffff;
+    --color-leadText: rgb(255, 255, 255, 1);
+    --color-paragraph: rgba(255, 255, 255, 0.70);
+    --color-navText: #33354D;
+    --color-gradient: linear-gradient(90deg, rgb(99, 102, 241) 0% ,rgb(139, 92, 246)50% ,rgb(217, 70, 239) 100%);
+    --backgroundColor-btn: #6366F1;
+    --backgroundColor-section: #0B0F19;
+    --backgroundColor-gray: #0b0f19dc; 
+    --backgroundColor-slider: #9397AD; 
+    --background: #3E4265; background: linear-gradient(355deg, rgba(62, 66, 101, 1) 0%, rgba(19, 16, 34, 1) 0%, rgba(11, 15, 25, 1) 100%);
+}
+
+.body {
+    scroll-behavior: smooth;
+}
+
+container {
+
+    width: 100%;
+    padding: 0 1rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button {
+    border: none;
+    cursor: pointer;
+    border-radius: .25em;
+    font-family: manrope;
+    color:var(--color-white);
+    background-color: var(--backgroundColor-btn);
+    
+        &:hover {
+            background: var(--color-gradient);
+        }
+
+}
