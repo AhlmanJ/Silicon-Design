@@ -3,12 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=menu" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
 <link rel="stylesheet" href="/css/main.css">
 <title> - Silicon Design. </title>
 </head>
 <body>
-   
-   
+    <section class="header">
+        <div class="container">
+            <div class="headercontent">
+                <a class="siliconLogo" href="#" aria-label="to Silicon inc website"><img src="images/mobile/Silicon logo (mobile).svg" alt="Silicon inc. logo"></a>
+
+                
+                <div class="header-buttons">
+                    <div class="darkModeText"><p>Dark Mode</p></div>
+                    <!-- Darkmode-switch START -->
+                    <label class="toggle" for="darkmode-switch" aria-label="darkmode toggle"> <!-- In order to make the toggel-switch work, make sure to connect label and input with same form control and id!-->
+                        <input class="toggle-input" type="checkbox" id="darkmode-switch" aria-label="darkmode toggle.">
+                        <span class="slider"></span>
+                    </label>
+                    <!-- Darkmode-switch END -->
+                    <a class="menuButton" href="#"><span class="material-symbols-outlined">menu</span></a>
+                    <button class="sign-in"><img src="images/desktop/Desktop-SignInLogo.png" alt="A logo">&nbsp&nbsp Sign in / up</button>
+                </div>
+            </div>
+        </div>
+   </section>
 </body>
 </html>
