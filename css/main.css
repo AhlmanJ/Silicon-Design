@@ -98,16 +98,19 @@ button {
         justify-content: space-between;
 
         .siliconLogo {
-            margin-left: 0.75em;
+            margin-left: 0.2em;
+
+            @media (width >= 768px) {
+                margin-left: 1.5em;
+            }
         }
- 
+
         .header-buttons {
             display: flex;
             align-items: center;
 
             .darkModeText {
                 margin-right: .94em;
-                color: var(--color-paragraph);
             }
 
             /* ----- Toggle-switch START ----- */
@@ -115,8 +118,8 @@ button {
                 width: 2.875em;
                 height: 1.5em;
                 border-radius: 50%;
-                margin-right: 1.81em;
                 display: flex;
+                margin-right: 1.81em;
 
                 .toggle-input {
                     display: none;
@@ -157,6 +160,7 @@ button {
                 }                
             } 
             /* ----- Toggle-switch END ----- */
+
             .menuButton {
                 margin-right:  0.44em;
                 .material-symbols-outlined {color: var(--color-menuButton)}
@@ -165,23 +169,50 @@ button {
             .sign-in {
                 width: 8.75em;
                 height: 2.25em;
+                display: none;
+            }
+            
+             .siliconLogo {
+            margin-left: 0.75em;
+            }
+        
+
+            @media (width >= 768px) {
+            max-width: 1023px;
+            .header-buttons {margin-right: 0.75em;}
+            .darkModeText {display: flex; color: #131022;}
+            .sign-in {display: none;}
+            .toggle {margin-right: 4.5em;}
+            }
+    
+            @media (width >= 1024px) {
+            max-width: 1320px;
+            .darkModeText {color:var(--color-paragraph);}
+            .menuButton {display: none;}
+            .sign-in {display: inline;}
+            }
+
+            @media (width >= 1400px) {
+            max-width: 1920px;
+            .menuButton {display: none;}
+            .sign-in {display: inline;}
             }
         }
     } 
     
-    @media (width <= 767px) {
-        .sign-in {display: none;}
-    }
 
     @media (width >= 768px) {
         max-width: 1023px;
-        .header-buttons {margin-right: 2.43em;}
-        .darkModeText {display: inline;}
+        .header-buttons {margin-right: 0.75em;}
+        .darkModeText {display: flex; color: #131022;}
         .sign-in {display: none;}
+        .toggle {margin-right: 4em;}
+        
     }
     
     @media (width >= 1024px) {
         max-width: 1320px;
+        .darkModeText {color:var(--color-paragraph);}
         .menuButton {display: none;}
         .sign-in {display: inline;}
     }
