@@ -9,14 +9,16 @@
     --color-heading: #0B0F19;
     --color-leadText: #0B0F19;
     --color-paragraph: #565973;
+    --color-h2: #585C7B;
     --color-navText: #33354D;
     --color-menuButton: #3E4265;
     --color-darkModeSwitch: #ffffff;
     --color-gradient: linear-gradient(90deg, rgb(99, 102, 241) 0% ,rgb(139, 92, 246)50% ,rgb(217, 70, 239) 100%);
     --backgroundColor-btn: #6366F1;
     --backgroundColor-section: #ffffff;
-    --backgroundColor-gray: #F3F6FF; 
-    --backgroundColor-light-hero: radial-gradient(at bottom, rgba(99, 101, 241, 10%) 0%, rgba(219, 70, 239, 5%) 42%, rgba(241, 244, 253, 7%) 83%);
+    --backgroundColor-gray: #F3F6FF;
+    --backgroundColor-appbtn: #131022; 
+    --background-hero: radial-gradient(at bottom, rgba(99, 101, 241, 10%) 0%, rgba(219, 70, 239, 5%) 42%, rgba(241, 244, 253, 7%) 83%);
     --backgroundColor-slider: #9397AD; 
 }
 
@@ -25,14 +27,16 @@
     --color-heading: #ffffff;
     --color-leadText: rgb(255, 255, 255, 1);
     --color-paragraph: rgba(255, 255, 255, 0.70);
+    --color-h2: #ffffff;
     --color-navText: #33354D;
     --color-menuButton: #ffffff;
     --color-gradient: linear-gradient(90deg, rgb(99, 102, 241) 0% ,rgb(139, 92, 246)50% ,rgb(217, 70, 239) 100%);
     --backgroundColor-btn: #6366F1;
     --backgroundColor-section: #0B0F19;
     --backgroundColor-gray: #0b0f19dc; 
-    --backgroundColor-slider: #9397AD; 
-    --background: #3E4265; background: linear-gradient(355deg, rgba(62, 66, 101, 1) 0%, rgba(19, 16, 34, 1) 0%, rgba(11, 15, 25, 1) 100%);
+    --backgroundColor-slider: #9397AD;
+    --backgroundColor-appbtn: #eff2fc;
+    --background-hero: #3E4265; background: linear-gradient(355deg, rgba(62, 66, 101, 1) 0%, rgba(19, 16, 34, 1) 0%, rgba(11, 15, 25, 1) 100%);
 }
 
 .body {
@@ -41,17 +45,18 @@
 
 .container {
     width: 100%;
+    min-width: 390px;
     margin-left: auto;
     margin-right: auto;
     padding-left: 1rem;
     padding-right: 1rem;
+    font-family: manrope;
 }
 
 button {
     border: none;
     cursor: pointer;
     border-radius: .25em;
-    font-family: manrope;
     color:var(--color-white);
     background-color: var(--backgroundColor-btn);
     
@@ -77,28 +82,24 @@ button {
 
 .header {
     width: 100vw;
-    max-width: 720px;
-    opacity: 1;
     display: flex;
-    height: 3.75em;
-    position: fixed;
-    max-height: 3.75em;
+    height: 3.69em;
+    margin-top: .69em;
     align-items: center;
     justify-content: space-between;
+    background-color: var(--backgroundColor-light-hero);
 
-    .darkModeText {
-        display: none;
-        font-family: manrope;
-        color: var(--color-paragraph);
-    }
+    @media (width >=768px) {height: 4.56em;} 
+    @media (width >= 1024px), (width >= 1400px) {height: 4.75em;}
+
    
-    .headercontent {
+    .header-content {
         display: flex;
         align-items: center;
         justify-content: space-between;
 
         .siliconLogo {
-            margin-left: 0.2em;
+            margin-left: .2em;
 
             @media (width >= 768px) {
                 margin-left: 1.5em;
@@ -111,6 +112,8 @@ button {
 
             .darkModeText {
                 margin-right: .94em;
+                display: none;
+                color: var(--color-paragraph);
             }
 
             /* ----- Toggle-switch START ----- */
@@ -119,7 +122,7 @@ button {
                 height: 1.5em;
                 border-radius: 50%;
                 display: flex;
-                margin-right: 1.81em;
+                margin-right: .9em;
 
                 .toggle-input {
                     display: none;
@@ -162,7 +165,8 @@ button {
             /* ----- Toggle-switch END ----- */
 
             .menuButton {
-                margin-right:  0.44em;
+                margin-right: .6em;
+                margin-left: 0;
                 .material-symbols-outlined {color: var(--color-menuButton)}
             }
         
@@ -224,3 +228,81 @@ button {
     }
 
 }
+
+.hero {
+    height: 31.19em;
+    width: 100dvw;
+    margin-left: .12em;
+    background: var(--background-hero) ;
+    @media (width >= 768px) { height: 39.63em;}
+    @media (width >= 1024px), (width >= 1400px) { height: 50em;}
+        
+    .herotext-wrapper{
+        margin-top: 10em;
+
+        .hero-text {
+            
+            h1 {
+            font-weight: 800;
+            font-size: 2.13em;
+            line-height: 2.78em;
+            margin-top: -4.5em;
+            color: var(--color-heading);
+            }
+
+            h2 {
+            font-weight: 400;
+            font-size: 1.125em;
+            line-height: 1.8em;
+            margin-top: -.9em;
+            color: var(--color-h2);
+            }
+
+            #h1-1 { margin-left: 1.4em; margin-bottom: 0em;}
+            #h1-2 { margin-left: .85em; margin-top: -1.5em;}
+            #h2-1 { margin-left: -.2em;}
+            #h2-2 { margin-left: .4em;}
+            #h2-3 { margin-left: 7em;}
+
+            @media (width >= 580px) {
+                #h1-1 { margin-left: 4.4em; margin-bottom: 0em;}
+                #h1-2 { margin-left: 3.85em; margin-top: -1.5em;}
+                #h2-1 { margin-left: 5.4em;}
+                #h2-2 { margin-left: 6em;}
+                #h2-3 { margin-left: 12.7em;}
+            }
+        }
+    }
+    
+    .appStore-btn {
+        
+        height: 3.15em;
+        width: 22.9em;
+        margin-top: 1em;
+        border-radius: .5em;
+        background-color: var(--backgroundColor-appbtn);
+
+        @media (width >= 580px) {margin-left: 6em;}
+        
+        @media (width >= 768px) {
+            max-width: 1023px;
+        }
+    }
+
+    .googlePlay-btn {
+        height: 3.15em;
+        width: 22.9em;
+        margin-top: 1em;
+        border-radius: .5em;
+        background-color: var(--backgroundColor-appbtn);
+
+        @media (width >= 580px) {margin-left: 6em;}
+
+        @media (width >= 768px) {
+            max-width: 1023px;
+        }
+    }
+
+}
+
+.test {height: 300px; background-color: var(--color-white);}
