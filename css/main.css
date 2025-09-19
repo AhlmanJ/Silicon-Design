@@ -44,13 +44,26 @@
 }
 
 .container {
-    width: 100%;
-    min-width: 390px;
+    width: 100dvw;
     margin-left: auto;
     margin-right: auto;
     padding-left: 1rem;
     padding-right: 1rem;
     font-family: manrope;
+    
+
+    /* Tablet */
+    @media (width >= 768px) {
+        max-width: 720px;
+    }
+    /* Laptops and smaller screens*/
+    @media (width >= 1024px) {
+        max-width: 992px;
+    }
+    /* Desktop */ 
+    @media (width >= 1400px) {
+        max-width: 1320px;
+    }
 }
 
 button {
@@ -81,10 +94,9 @@ button {
 }
 
 .header {
-    width: 100vw;
-    display: flex;
     height: 3.69em;
     margin-top: .69em;
+    display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: var(--backgroundColor-light-hero);
@@ -94,7 +106,8 @@ button {
 
    
     .header-content {
-        display: flex;
+        width: 100%;
+        display: inline-flex;
         align-items: center;
         justify-content: space-between;
 
@@ -122,7 +135,7 @@ button {
                 height: 1.5em;
                 border-radius: 50%;
                 display: flex;
-                margin-right: .9em;
+                margin-right: 1.5em;
 
                 .toggle-input {
                     display: none;
@@ -165,7 +178,7 @@ button {
             /* ----- Toggle-switch END ----- */
 
             .menuButton {
-                margin-right: .6em;
+                margin-right: .3em;
                 margin-left: 0;
                 .material-symbols-outlined {color: var(--color-menuButton)}
             }
@@ -176,13 +189,8 @@ button {
                 display: none;
             }
             
-             .siliconLogo {
-            margin-left: 0.75em;
-            }
-        
 
             @media (width >= 768px) {
-            max-width: 1023px;
             .header-buttons {margin-right: 0.75em;}
             .darkModeText {display: flex; color: #131022;}
             .sign-in {display: none;}
@@ -190,14 +198,12 @@ button {
             }
     
             @media (width >= 1024px) {
-            max-width: 1320px;
             .darkModeText {color:var(--color-paragraph);}
             .menuButton {display: none;}
             .sign-in {display: inline;}
             }
 
             @media (width >= 1400px) {
-            max-width: 1920px;
             .menuButton {display: none;}
             .sign-in {display: inline;}
             }
@@ -230,21 +236,21 @@ button {
 }
 
 .hero {
-    height: 31.19em;
     width: 100dvw;
-    margin-left: .12em;
+    height: 31.19em;
     background: var(--background-hero) ;
     @media (width >= 768px) { height: 39.63em;}
     @media (width >= 1024px), (width >= 1400px) { height: 50em;}
         
     .herotext-wrapper{
-        margin-top: 10em;
+        margin-top: 8em;
+        
 
         .hero-text {
             
             h1 {
             font-weight: 800;
-            font-size: 2.13em;
+            font-size: 1.72em;
             line-height: 2.78em;
             margin-top: -4.5em;
             color: var(--color-heading);
@@ -252,57 +258,57 @@ button {
 
             h2 {
             font-weight: 400;
-            font-size: 1.125em;
+            font-size: 0.9rem;
             line-height: 1.8em;
             margin-top: -.9em;
             color: var(--color-h2);
             }
 
             #h1-1 { margin-left: 1.4em; margin-bottom: 0em;}
-            #h1-2 { margin-left: .85em; margin-top: -1.5em;}
-            #h2-1 { margin-left: -.2em;}
+            #h1-2 { margin-left: .9em; margin-top: -1.5em;}
+            #h2-1 { margin-left: -.1em;}
             #h2-2 { margin-left: .4em;}
             #h2-3 { margin-left: 7em;}
+        
 
-            @media (width >= 580px) {
-                #h1-1 { margin-left: 4.4em; margin-bottom: 0em;}
-                #h1-2 { margin-left: 3.85em; margin-top: -1.5em;}
-                #h2-1 { margin-left: 5.4em;}
-                #h2-2 { margin-left: 6em;}
-                #h2-3 { margin-left: 12.7em;}
+            @media (width >= 390px) {
+                h1 {font-size: 2.12em;}
+                h2 {font-size: 1.12em;}
+
+                #h1-1 { margin-left: 1.4em; margin-bottom: 0em;}
+                #h1-2 { margin-left: .9em; margin-top: -1.5em;}
+                #h2-1 { margin-left: -.1em;}
+                #h2-2 { margin-left: .4em;}
+                #h2-3 { margin-left: 7em;}
             }
         }
     }
     
-    .appStore-btn {
+    .appBtns-wrapper {
         
-        height: 3.15em;
-        width: 22.9em;
-        margin-top: 1em;
-        border-radius: .5em;
-        background-color: var(--backgroundColor-appbtn);
-
-        @media (width >= 580px) {margin-left: 6em;}
+        .appStore-btn {
         
-        @media (width >= 768px) {
-            max-width: 1023px;
+            height: 3.15em;
+            width: 18.56em;
+            margin-top: 1em;
+            border-radius: .5em;
+            background-color: var(--backgroundColor-appbtn);
+
         }
-    }
 
-    .googlePlay-btn {
-        height: 3.15em;
-        width: 22.9em;
-        margin-top: 1em;
-        border-radius: .5em;
-        background-color: var(--backgroundColor-appbtn);
-
-        @media (width >= 580px) {margin-left: 6em;}
-
-        @media (width >= 768px) {
-            max-width: 1023px;
+        .googlePlay-btn {
+            height: 3.15em;
+            width: 18.56em;
+            margin-top: 1em;
+            border-radius: .5em;
+            background-color: var(--backgroundColor-appbtn);
         }
-    }
 
+         @media (width >= 390px) {
+            .appStore-btn, .googlePlay-btn { width: 22.9em;}
+         }
+
+    }
 }
 
 .test {height: 300px; background-color: var(--color-white);}
