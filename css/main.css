@@ -50,7 +50,6 @@
     padding-left: 1rem;
     padding-right: 1rem;
     font-family: manrope;
-    
 
     /* Tablet */
     @media (width >= 768px) {
@@ -99,7 +98,7 @@ button {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--backgroundColor-light-hero);
+    background-color: var(--background-hero);
 
     @media (width >=768px) {height: 4.56em;} 
     @media (width >= 1024px), (width >= 1400px) {height: 4.75em;}
@@ -111,13 +110,7 @@ button {
         align-items: center;
         justify-content: space-between;
 
-        .siliconLogo {
-            margin-left: .2em;
-
-            @media (width >= 768px) {
-                margin-left: 1.5em;
-            }
-        }
+        .siliconLogo { margin-left: .2em; @media (width >= 768px){ margin-left: -.5em; }}
 
         .header-buttons {
             display: flex;
@@ -178,9 +171,8 @@ button {
             /* ----- Toggle-switch END ----- */
 
             .menuButton {
-                margin-right: .3em;
-                margin-left: 0;
-                .material-symbols-outlined {color: var(--color-menuButton)}
+                margin-top: .7em;
+                .material-symbols-outlined { font-size: 2em; color: var(--color-menuButton)}
             }
         
             .sign-in {
@@ -195,6 +187,7 @@ button {
             .darkModeText {display: flex; color: #131022;}
             .sign-in {display: none;}
             .toggle {margin-right: 4.5em;}
+            .menuButton {margin-right: -1em;}
             }
     
             @media (width >= 1024px) {
@@ -239,75 +232,125 @@ button {
     width: 100dvw;
     height: 31.19em;
     background: var(--background-hero) ;
-    @media (width >= 768px) { height: 39.63em;}
+    @media (width >= 768px) { height: 40em;}
     @media (width >= 1024px), (width >= 1400px) { height: 50em;}
-        
-    .herotext-wrapper{
-        margin-top: 8em;
-        
 
-        .hero-text {
-            
-            h1 {
-            font-weight: 800;
-            font-size: 1.72em;
-            line-height: 2.78em;
-            margin-top: -4.5em;
-            color: var(--color-heading);
-            }
+    .grid-containerHero {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 9em 5em 5em 8em;
 
-            h2 {
-            font-weight: 400;
-            font-size: 0.9rem;
-            line-height: 1.8em;
-            margin-top: -.9em;
-            color: var(--color-h2);
-            }
+        grid-template-areas:"heading" 
+                            "header-h2"
+                             "appStore"
+                             "googlePlay";
 
-            #h1-1 { margin-left: 1.4em; margin-bottom: 0em;}
-            #h1-2 { margin-left: .9em; margin-top: -1.5em;}
-            #h2-1 { margin-left: -.1em;}
-            #h2-2 { margin-left: .4em;}
-            #h2-3 { margin-left: 7em;}
-        
+        #heading {grid-area: heading;}
+        #header-h2 {grid-area: header-h2;}
+        #appStore {grid-area: appStore;}
+        #googlePlay {grid-area: googlePlay;}
 
-            @media (width >= 390px) {
-                h1 {font-size: 2.12em;}
-                h2 {font-size: 1.12em;}
-
-                #h1-1 { margin-left: 1.4em; margin-bottom: 0em;}
-                #h1-2 { margin-left: .9em; margin-top: -1.5em;}
-                #h2-1 { margin-left: -.1em;}
-                #h2-2 { margin-left: .4em;}
-                #h2-3 { margin-left: 7em;}
-            }
+        @media (width >= 768px) {
+             grid-template-columns: 1fr 1fr;
+             grid-template-rows: auto;
+             grid-template-areas: "heading heading"
+                                    "text phone"
+                                    "appStore googlePlay";
         }
+
+        #phone {grid-area: phone;}
+        #texth3 {grid-area: text;}
+    }
+        
+  
+    h1 {
+        font-weight: 800;
+        font-size: 1.72em;
+        line-height: 2.78em;
+        margin-top: 4.5em;
+        color: var(--color-heading);
+    }
+
+    h2 {
+        font-weight: 400;
+        font-size: 0.9rem;
+        line-height: 1.8em;
+        margin-top: -.9em;
+        color: var(--color-h2);
+    }
+
+    h3 {
+        font-weight: 400;
+        font-size: 0.9rem;
+        line-height: 1.8em;
+        margin-top: -.9em;
+        color: var(--color-h2);
+    }
+
+    #h1-1 { margin-top: 0em; margin-left: 1.4em; margin-bottom: 0em; grid-row: 1;}
+    #h1-2 { margin-left: .9em; margin-top: -1.5em; grid-row: 1;}
+    #h2-1 { margin-left: -.1em;}
+    #h2-2 { margin-left: .4em;}
+    #h2-3 { margin-left: 7em;}
+        
+
+    @media (width >= 390px) {
+        .heading {margin-top: .7em;}
+
+        h1 {font-size: 2.12em;}
+        h2 {font-size: 1.12em;}
+
+        #h1-1 { margin-top: -.5em; margin-left: 1.4em; margin-bottom: 0em;}
+        #h1-2 { margin-left: .9em; margin-top: -1.5em;}
+        #h2-1 { margin-left: -.1em;}
+        #h2-2 { margin-left: .4em;}
+        #h2-3 { margin-left: 7em;}
+    }
+
+    @media (width >= 768px) {
+            
+        .texth2 {display: none;}
+        .texth3 {margin-top: 6em; margin-right: 4em; margin-left: -2em;}
+        h1 {font-size: 2.75em;}
+        h3 {font-size: 1.12em;}
+        #h1-1 { margin-top: .2em; margin-left: 3.6em;}
+        #h1-2 { margin-left: 3.1em; margin-top: -1.5em;}
+        #h3-1 { margin-left: 1em; margin-right: -5em; margin-bottom: 0em;}
+        #h3-2 { margin-bottom: 10.9em; margin-left: 1em; margin-right: -5em;}
     }
     
-    .appBtns-wrapper {
-        
-        .appStore-btn {
-        
-            height: 3.15em;
-            width: 18.56em;
-            margin-top: 1em;
-            border-radius: .5em;
-            background-color: var(--backgroundColor-appbtn);
+    .appStore-btn {
+        height: 3.15em;
+        width: 18.56em;
+        margin-top: 1em;
+        border-radius: .5em;
+        background-color: var(--backgroundColor-appbtn);
 
-        }
+        @media (width >= 390px) {width: 22.9em; margin-top: 2.2em;}
+        @media (width >= 768px) {width: 7.88em; margin-top: -10.8em; margin-left: -1em; #AppStore-img {width: 6em;}}
 
-        .googlePlay-btn {
-            height: 3.15em;
-            width: 18.56em;
-            margin-top: 1em;
-            border-radius: .5em;
-            background-color: var(--backgroundColor-appbtn);
-        }
+     }
 
-         @media (width >= 390px) {
-            .appStore-btn, .googlePlay-btn { width: 22.9em;}
-         }
+    .googlePlay-btn {
+        height: 3.15em;
+        width: 18.56em;
+        margin-top: 0em;
+        border-radius: .5em;
+        background-color: var(--backgroundColor-appbtn);
 
+        @media (width >= 390px) {width: 22.9em; margin-top: 1.3em;}
+        @media (width >= 768px) {width: 8.63em; margin-left: -7em; margin-top: -10.8em;  #GooglePlay-img {width: 6.5em;}}
+    }
+
+    .texth3 {
+        display: none; 
+        @media (width >= 768px) { display: grid;}
+    }
+
+    .heroPhone {
+        display: none;
+
+         @media (width >= 768px) {display: grid; margin-right: 4.6em; margin-top: 0em;}
     }
 }
 
