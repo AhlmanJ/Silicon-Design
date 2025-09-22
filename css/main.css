@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+/* Color-scheme for light mode */
 :root {
     --color-white: #ffffff;
     --color-heading: #0B0F19;
@@ -19,9 +20,11 @@
     --backgroundColor-gray: #F3F6FF;
     --backgroundColor-appbtn: #131022; 
     --background-hero: radial-gradient(at bottom, rgba(99, 101, 241, 10%) 0%, rgba(219, 70, 239, 5%) 42%, rgba(241, 244, 253, 7%) 83%);
+    --background-header: radial-gradient(at bottom, rgba(99, 101, 241, 0.027) 0%, rgba(219, 70, 239, 0) 42%, rgba(241, 244, 253, 0) 83%);
     --backgroundColor-slider: #9397AD; 
 }
 
+/* Color-scheme for dark mode*/
 [data-theme="dark"] {
     --color-white: #ffffff;
     --color-heading: #ffffff;
@@ -43,42 +46,29 @@
     scroll-behavior: smooth;
 }
 
+/* ----- Container to set viewport settings ----- */
 .container {
     width: 100dvw;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
     font-family: manrope;
 
-    /* Tablet */
+     /* Tablet */
     @media (width >= 768px) {
         max-width: 720px;
     }
-    /* Laptops and smaller screens*/
+
     @media (width >= 1024px) {
-        max-width: 992px;
+        max-width: 960px;
     }
+  
     /* Desktop */ 
-    @media (width >= 1400px) {
+    @media (width >= 1440px) {
         max-width: 1320px;
     }
+
 }
 
 button {
-    border: none;
-    cursor: pointer;
-    border-radius: .25em;
-    color:var(--color-white);
-    background-color: var(--backgroundColor-btn);
-    
-        &:hover {
-            background: var(--color-gradient);
-        }
-
-}
-
-.button {
+    display: flex;
     border: none;
     cursor: pointer;
     border-radius: .25em;
@@ -92,25 +82,31 @@ button {
 
 }
 
-.header {
+.header {   
+    background: var(--background-header);
     height: 3.69em;
-    margin-top: .69em;
+    width: 100dvw;
+    display: block;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--background-hero);
-
     @media (width >=768px) {height: 4.56em;} 
-    @media (width >= 1024px), (width >= 1400px) {height: 4.75em;}
+    @media (width >= 1024px) {height: 4.75em;}
 
    
     .header-content {
         width: 100%;
-        display: inline-flex;
+        display: flex;
         align-items: center;
         justify-content: space-between;
 
-        .siliconLogo { margin-left: .2em; @media (width >= 768px){ margin-left: -.5em; }}
+        .siliconLogo { 
+            margin-left: 1em; 
+            
+            @media (width >= 768px) { margin-left: 2.13em;}
+            @media (width >= 1400px) { margin-left: 5em;}
+            @media (width >= 1800px) { margin-left: 19em;} 
+        }
 
         .header-buttons {
             display: flex;
@@ -172,6 +168,7 @@ button {
 
             .menuButton {
                 margin-top: .7em;
+                margin-right: 1em;
                 .material-symbols-outlined { font-size: 2em; color: var(--color-menuButton)}
             }
         
@@ -179,15 +176,18 @@ button {
                 width: 8.75em;
                 height: 2.25em;
                 display: none;
+
+                @media (width >= 1400px) { margin-right: 7.5em;}
+                @media (width >= 1800px) { margin-right: 11.5em;} 
             }
             
-
+            /* ----- Media Queries for each screen size ----- */
             @media (width >= 768px) {
             .header-buttons {margin-right: 0.75em;}
             .darkModeText {display: flex; color: #131022;}
             .sign-in {display: none;}
             .toggle {margin-right: 4.5em;}
-            .menuButton {margin-right: -1em;}
+            .menuButton {margin-right: .5em;}
             }
     
             @media (width >= 1024px) {
@@ -231,38 +231,49 @@ button {
 .hero {
     width: 100dvw;
     height: 31.19em;
-    background: var(--background-hero) ;
+    background: var(--background-hero);
     @media (width >= 768px) { height: 40em;}
-    @media (width >= 1024px), (width >= 1400px) { height: 50em;}
+    @media (width >= 1440px) { height: 50em;}
 
     .grid-containerHero {
         display: grid;
+        margin-left: .5em;
         grid-template-columns: 1fr;
         grid-template-rows: 9em 5em 5em 8em;
 
         grid-template-areas:"heading" 
-                            "header-h2"
-                             "appStore"
-                             "googlePlay";
+                            "heading-h2"
+                            "apps";
 
         #heading {grid-area: heading;}
-        #header-h2 {grid-area: header-h2;}
+        #heading-h2 {grid-area: heading-h2;}
         #appStore {grid-area: appStore;}
         #googlePlay {grid-area: googlePlay;}
+        #phone-tablet {grid-area: phone;}
+        #heading-h3 {grid-area: text;}
+        #phone-desktop {grid-area: phone2;}
+        #app-wrapper {grid-area: apps;}
+        #heading-h4 {grid-area: text2;}
 
         @media (width >= 768px) {
-             grid-template-columns: 1fr 1fr;
-             grid-template-rows: auto;
-             grid-template-areas: "heading heading"
-                                    "text phone"
-                                    "appStore googlePlay";
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto;
+            grid-template-areas: "heading heading"
+                                 "text phone"
+                                 "apps phone";
+        }
+        
+        
+        @media (width >= 1440px) {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: repeat(2,1fr);
+            grid-template-areas: "heading phone2"
+                                 "text2 phone2"
+                                 "apps phone2";
         }
 
-        #phone {grid-area: phone;}
-        #texth3 {grid-area: text;}
     }
-        
-  
+    
     h1 {
         font-weight: 800;
         font-size: 1.72em;
@@ -287,10 +298,19 @@ button {
         color: var(--color-h2);
     }
 
+    h4 {
+        font-weight: 400;
+        font-size: 0.9rem;
+        line-height: 1.8em;
+        margin-top: -.9em;
+        color: var(--color-h2);
+    }
+
+    /* Id for text in Hero-section, to set margin etc. */
     #h1-1 { margin-top: 0em; margin-left: 1.4em; margin-bottom: 0em; grid-row: 1;}
     #h1-2 { margin-left: .9em; margin-top: -1.5em; grid-row: 1;}
-    #h2-1 { margin-left: -.1em;}
-    #h2-2 { margin-left: .4em;}
+    #h2-1 { margin-left: .1em;}
+    #h2-2 { margin-left: 1em;}
     #h2-3 { margin-left: 7em;}
         
 
@@ -302,8 +322,8 @@ button {
 
         #h1-1 { margin-top: -.5em; margin-left: 1.4em; margin-bottom: 0em;}
         #h1-2 { margin-left: .9em; margin-top: -1.5em;}
-        #h2-1 { margin-left: -.1em;}
-        #h2-2 { margin-left: .4em;}
+        #h2-1 { margin-left: -.6em;}
+        #h2-2 { margin-left: -.1em;}
         #h2-3 { margin-left: 7em;}
     }
 
@@ -311,47 +331,95 @@ button {
             
         .texth2 {display: none;}
         .texth3 {margin-top: 6em; margin-right: 4em; margin-left: -2em;}
-        h1 {font-size: 2.75em;}
-        h3 {font-size: 1.12em;}
-        #h1-1 { margin-top: .2em; margin-left: 3.6em;}
-        #h1-2 { margin-left: 3.1em; margin-top: -1.5em;}
-        #h3-1 { margin-left: 1em; margin-right: -5em; margin-bottom: 0em;}
-        #h3-2 { margin-bottom: 10.9em; margin-left: 1em; margin-right: -5em;}
+        h1 {font-size: 2.765em;}
+        h3 {font-size: 1.2em;}
+        #h1-1 { margin-top: .2em; margin-left: 4.2em;}
+        #h1-2 { margin-left: 3.7em; margin-top: -1.5em;}
+        #h3-1 { margin-left: 2.5em; margin-right: -10em; margin-top: -.9em; margin-bottom: 0em; line-height: 1.6em;}
+        #h3-2 { margin-left: 2.5em; margin-right: -10em; margin-top: .2em; line-height: 1.6em;}
+    }
+
+    @media (width >= 1440px) {
+        .texth4 {margin-top: 4em; font-size: 600;}
+        h1 {font-size: 3.5em;}
+        h4 {font-size: 1.13em;}
+        #h1-1 { margin-top: 1.7em; margin-left: 1.1em;}
+        #h1-2 { margin-top: -1.55em; margin-left: 1.1em;}
+        #h4-1 { margin-left: 3.5em; margin-top: -8.3em;}
+        #h4-2 { margin-left: 3.5em; margin-top: -.2em;}
+    } 
+
+    @media (width >= 1800px) {
+        #h1-1 { margin-top: 1.7em; margin-left: 5.2em;}
+        #h1-2 { margin-top: -1.45em; margin-left: 5.2em;}
+        #h4-1 { margin-left: 16.3em; margin-top: -8.3em;}
+        #h4-2 { margin-left: 16.3em; margin-top: -.2em;}
     }
     
-    .appStore-btn {
+    /* Container for the two buttons*/
+    .app-wrapper{
+        display: grid;
+        margin-left: -5em;
+
+        @media (width >= 390px) { margin-left: -10em;}
+        @media (width >= 768px) { margin-top: -13em; margin-left: 1em;}
+        @media (width >= 1024px) { margin-top: -13em; margin-left: -12.5em;}
+        @media (width >= 1440px) { margin-top: -44.5em; margin-left: 4.3em;}
+        @media (width >= 1800px) { margin-left: 8.8em;}
+
+        .appStore-btn {
         height: 3.15em;
-        width: 18.56em;
-        margin-top: 1em;
+        max-width: 18em;
+        margin-top: 2em;
         border-radius: .5em;
         background-color: var(--backgroundColor-appbtn);
 
-        @media (width >= 390px) {width: 22.9em; margin-top: 2.2em;}
-        @media (width >= 768px) {width: 7.88em; margin-top: -10.8em; margin-left: -1em; #AppStore-img {width: 6em;}}
+        #AppStore-img {margin-top: .4em; margin-left: 4.5em; height: 2.2em;}
 
-     }
+        @media (width >= 390px) {max-width: 23em; margin-top: 2.3em; margin-left: 2em; #AppStore-img {margin-left: 6.9em;}}
+        @media (width >= 768px) {max-width: 7.88em; margin-top: 0em; margin-left: 0em; #AppStore-img {width: 6.2em; margin-top: .4em; margin-left: .3em;}}
+        @media (width >= 1440px) {max-width: 11.25em; height: 3.25em; margin-left: -9em; margin-right: 0; #AppStore-img {width: 8em; margin-top: .4em;}}
+        }
 
-    .googlePlay-btn {
+        .googlePlay-btn {
         height: 3.15em;
-        width: 18.56em;
-        margin-top: 0em;
+        max-width: 18em;
+        margin-top: 6em;
         border-radius: .5em;
         background-color: var(--backgroundColor-appbtn);
 
-        @media (width >= 390px) {width: 22.9em; margin-top: 1.3em;}
-        @media (width >= 768px) {width: 8.63em; margin-left: -7em; margin-top: -10.8em;  #GooglePlay-img {width: 6.5em;}}
+        #GooglePlay-img {margin-top: .4em; margin-left: 3.8em; height: 2.2em;}
+
+        @media (width >= 390px) {max-width: 23em; margin-top: 6.5em; margin-left: 2em; #GooglePlay-img {margin-left: 6.3em;}}
+        @media (width >= 768px) {max-width: 8.63em; margin-left: 9em; margin-top: 0em; #GooglePlay-img {width: 6.8em; margin-top: .4em; margin-left: .5em;}}
+        @media (width >= 1440px) {max-width: 11.25em; height: 3.25em; margin-left: 3.6em; #GooglePlay-img {width: 8em; margin-top: .4em;}}
+        }
+
     }
 
     .texth3 {
         display: none; 
-        @media (width >= 768px) { display: grid;}
+        @media (width >= 768px) { display: block;}
+        @media (width >= 1440px) {display: none;}
     }
 
-    .heroPhone {
+    .texth4 {
+        display: none; 
+        @media (width >= 768px) { display: none;}
+        @media (width >= 1440px) {display: block;}
+    }
+
+    /* two different img of the phones because there are two different sizes.*/
+    .heroPhone-tablet {
         display: none;
 
-         @media (width >= 768px) {display: grid; margin-right: 4.6em; margin-top: 0em;}
+        @media (width >= 768px) {display: grid; margin-right: 1.1em;}
+        @media (width >= 1440px) {display: none;}
+    }
+
+    .heroPhone-desktop {
+        display: none;
+
+        @media (width >= 1440px) {display: block; margin-top: 6.95em; margin-right: 8.25em;}
     }
 }
-
-.test {height: 300px; background-color: var(--color-white);}
