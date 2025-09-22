@@ -10,6 +10,7 @@
     --color-heading: #0B0F19;
     --color-leadText: #0B0F19;
     --color-paragraph: #565973;
+    --color-brands-border: #E2E5F1;
     --color-h2: #585C7B;
     --color-navText: #33354D;
     --color-menuButton: #3E4265;
@@ -30,6 +31,7 @@
     --color-heading: #ffffff;
     --color-leadText: rgb(255, 255, 255, 1);
     --color-paragraph: rgba(255, 255, 255, 0.70);
+    --color-brands-border: #E2E5F1;
     --color-h2: #ffffff;
     --color-navText: #33354D;
     --color-menuButton: #ffffff;
@@ -43,26 +45,29 @@
 }
 
 .body {
+    font-size: 16px;
     scroll-behavior: smooth;
 }
 
 /* ----- Container to set viewport settings ----- */
 .container {
-    width: 100dvw;
+    width: 100%;
+    margin: 0;
+    padding: 0;
     font-family: manrope;
 
      /* Tablet */
     @media (width >= 768px) {
-        max-width: 720px;
+      
     }
 
     @media (width >= 1024px) {
-        max-width: 960px;
+     
     }
   
     /* Desktop */ 
     @media (width >= 1440px) {
-        max-width: 1320px;
+    
     }
 
 }
@@ -365,7 +370,7 @@ button {
         @media (width >= 768px) { margin-top: -13em; margin-left: 1em;}
         @media (width >= 1024px) { margin-top: -13em; margin-left: -12.5em;}
         @media (width >= 1440px) { margin-top: -44.5em; margin-left: 4.3em;}
-        @media (width >= 1800px) { margin-left: 8.8em;}
+        @media (width >= 1800px) { margin-left: 8.2em;}
 
         .appStore-btn {
         height: 3.15em;
@@ -421,5 +426,69 @@ button {
         display: none;
 
         @media (width >= 1440px) {display: block; margin-top: 6.95em; margin-right: 8.25em;}
+    }
+}
+
+.brands {
+    height: 9.19em;
+
+    .brands-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-top: 3em;
+        margin-left: .5em;
+
+        .box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 6.16em;
+            width: 9.9em;
+            border-radius: 0.5em;
+            border: 1px solid var(--color-brands-border);
+        }
+
+        @media (width >= 0px) { 
+            #b1 {display: none;}
+            #b2 {display: none;}
+            #b3 {display: none;}
+            #b4 {display: none;}
+            #b5 {display: none;}
+            #b6 {display: none;}
+        }
+
+        @media (width >= 768px) {
+            #b1 {display: flex;}
+            #b2 {display: flex;}
+            #b3 {display: flex;}
+            #b4 {display: flex;}
+        }
+
+        @media (width >= 1024px) {
+            margin-right: 3.1em;
+            #b1 { width: 9em; height: 6.25em;}
+            #b2 { width: 9em; height: 6.25em;}
+            #b3 { width: 9em; height: 6.25em;}
+            #b4 { width: 9em; height: 6.25em;}
+            #b5 {display: flex; width: 9em; height: 6.25em;}
+            #b6 {display: flex; width: 9em; height: 6.25em; box-shadow: 1px 3px 1px 2px #e2e5f133;}
+        }
+
+        @media (width >= 1400px) {
+            margin-left: 4em;
+            margin-right: 7.9em;
+            #b1 { width: 12.25em; height: 6.25em;}
+            #b2 { width: 12.25em; height: 6.25em;}
+            #b3 { width: 12.25em; height: 6.25em;}
+            #b4 { width: 12.25em; height: 6.25em;}
+            #b5 {display: flex; width: 12.25em; height: 6.25em;}
+            #b6 {display: flex; width: 12.25em; height: 6.25em; box-shadow: 1px 3px 1px 2px #e2e5f133;}
+        }
+
+         @media (width >= 1800px) { 
+            margin-right: 10.5em;
+            margin-left: 17.3em;
+         }
     }
 }
