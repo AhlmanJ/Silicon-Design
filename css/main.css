@@ -240,6 +240,7 @@ button {
     @media (width >= 768px) { height: 40em;}
     @media (width >= 1440px) { height: 50em;}
 
+     /* Container for the different grids for each width - Start */
     .grid-containerHero {
         display: grid;
         margin-left: .5em;
@@ -276,9 +277,10 @@ button {
                                  "text2 phone2"
                                  "apps phone2";
         }
-
     }
+    /* - End -*/
     
+    /* Layout for each text in the hero-section - Start */
     h1 {
         font-weight: 800;
         font-size: 1.72em;
@@ -310,6 +312,7 @@ button {
         margin-top: -.9em;
         color: var(--color-h2);
     }
+
 
     /* Id for text in Hero-section, to set margin etc. */
     #h1-1 { margin-top: 0em; margin-left: 1.4em; margin-bottom: 0em; grid-row: 1;}
@@ -360,7 +363,8 @@ button {
         #h4-1 { margin-left: 16.3em; margin-top: -8.3em;}
         #h4-2 { margin-left: 16.3em; margin-top: -.2em;}
     }
-    
+    /* - End -*/
+
     /* Container for the two buttons*/
     .app-wrapper{
         display: grid;
@@ -431,7 +435,8 @@ button {
 
 .brands {
     height: 9.19em;
-    
+
+    /* @media - to not show the section when on mobile-devices */
     @media (width >= 0px) {height: 0em;}
 
     .brands-container {
@@ -441,6 +446,7 @@ button {
         margin-top: 3em;
         margin-left: .5em;
 
+        /* a "box" for "wrapping" all the logo-boxes in a row.*/
         .box {
             display: flex;
             align-items: center;
@@ -451,6 +457,7 @@ button {
             border: 1px solid var(--color-brands-border);
         }
 
+        /* No logos on mobile-devices*/
         @media (width >= 0px) {
             #b1 {display: none;}
             #b2 {display: none;}
@@ -499,6 +506,7 @@ button {
     position: absolute;
     height: 62.56em;
 
+    /* Layout for each text in the feature-section - Start */
     h2{
         font-weight: 800;
         font-size: 1.74em;
@@ -506,7 +514,7 @@ button {
         color: var(--color-heading);
 
         @media (width >= 768px) {font-size: 2.09em;}
-        @media (width >= 1440px) {}
+        @media (width >= 1440px) {font-size: 2.5em;}
         @media (width >= 1800px) {}
     }
 
@@ -518,7 +526,6 @@ button {
 
         @media (width >= 390px) { font-size: 1.12rem;}
         @media (width >= 768px) { font-size: 1.125em;}
-        @media (width >= 1440px) {}
         @media (width >= 1800px) {}
     }
 
@@ -538,21 +545,28 @@ button {
 
         @media (width >= 768px) {font-size: 1em;}
     }
+    /* - End - */
 
+    /* Layout for the img-container in each "feature" - Start*/
     .img-box { 
         height: 3.75em;
         width: 3.75em;
         border-radius: 0.5em;
         background-color: var(--backgroundColor-gray);
     }
+    /*  - End - */
 
+    /* Container for the different grids for each width - Start */
     .grid-container-features {
         display: grid;
         margin-top: -3em;
         margin-left: 1em;
 
 
-        @media (width >= 390px) {margin-left: .2em;}
+        @media (width >= 390px) {
+            margin-left: .2em;
+        }
+
         @media (width >= 768px) {
             margin-top: 9.19em;
             margin-left: .7em;
@@ -569,12 +583,30 @@ button {
             .regular-cashback {grid-column: 1; grid-row: 5;}
             .top-standards {grid-column: 2; grid-row: 5;}
         }
-        @media (width >= 1440px) {}
-        @media (width >= 1800px) {}
 
+        @media (width >= 1440px) {
+            margin-left: 4.5em;
+            margin-right: 8.5em;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            grid-template-rows: repeat(5,1fr);
 
+            .heading-features {grid-column: 2/span3; grid-row: 1;}
+            .text-features { grid-column: 2/span 3; grid-row: 2;}
+            .easy-payments {grid-column: 2; grid-row: 3;}
+            .data-security {grid-column: 3; grid-row: 3;}
+            .cost-statistics {grid-column: 2; grid-row: 4;}
+            .support {grid-column: 3; grid-row: 4;}
+            .regular-cashback {grid-column: 2; grid-row: 5;}
+            .top-standards {grid-column: 3; grid-row: 5;}
+            .phone-features {grid-column: 1; grid-row: 1/span 5;}
+        }
 
+        @media (width >= 1800px) {
+            margin-left: 19em;
+            margin-right: 11.3em;
+        }
     }
+    /* - End -*/
 
     .heading-features { 
         margin-top: 1em; 
@@ -582,7 +614,7 @@ button {
         
         @media (width >= 390px) {margin-left: 3.1em;}
         @media (width >= 768px) {margin-left: 8.35em;}
-        @media (width >= 1440px) {}
+        @media (width >= 1440px) {margin-top: 1.35em; margin-left: -0.1em;}
         @media (width >= 1800px) {}
     }
 
@@ -591,10 +623,11 @@ button {
     
         @media (width >= 390px) {margin-top: -.6em; line-height: 1.55em;}
         @media (width >= 768px) {}
-        @media (width >= 1440px) {}
+        @media (width >= 1440px) {margin-top: -1.6em; margin-left: -.2em;}
         @media (width >= 1800px) {}
     }
 
+    /* Layout for each "feature" - Start */
     .easy-payments {
         display: grid;
         margin-top: 1.5em;
@@ -607,7 +640,7 @@ button {
 
         @media (width >= 390px) {margin-top: .8em; .features-text {margin-top: -1.2em; margin-left: 1.25em; line-height: 1.6em;}}
         @media (width >= 768px) {}
-        @media (width >= 1440px) {}
+        @media (width >= 1440px) {margin-top: -4em;}
         @media (width >= 1800px) {}
     }
 
@@ -622,7 +655,7 @@ button {
 
         @media (width >= 390px) { margin-top: .8em; margin-right: .9em;} .features-text {margin-top: -1.2em;}
         @media (width >= 768px) {}
-        @media (width >= 1440px) {}
+        @media (width >= 1440px) {margin-top: -4em;}
         @media (width >= 1800px) {}
     }
 
@@ -637,7 +670,7 @@ button {
 
         @media (width >= 390px) { margin-top: .8em; margin-right: .9em;} .features-text {margin-top: -1.2em;}
         @media (width >= 768px) {}
-        @media (width >= 1440px) {}
+        @media (width >= 1440px) {margin-top: -3.7em;}
         @media (width >= 1800px) {}
     }
 
@@ -652,7 +685,7 @@ button {
 
         @media (width >= 390px) { margin-top: .8em; margin-right: .9em;} .features-text {margin-top: -1.2em;}
         @media (width >= 768px) {}
-        @media (width >= 1440px) {}
+        @media (width >= 1440px) {margin-top: -3.7em;}
         @media (width >= 1800px) {}
     }
 
@@ -667,7 +700,7 @@ button {
 
         @media (width >= 390px) { margin-top: .8em; margin-right: .9em;} .features-text {margin-top: -1.2em;}
         @media (width >= 768px) {}
-        @media (width >= 1440px) {}
+        @media (width >= 1440px) {margin-top: -3.2em;}
         @media (width >= 1800px) {}
     }
 
@@ -682,7 +715,15 @@ button {
 
         @media (width >= 390px) { margin-top: .8em; margin-right: .9em;} .features-text {margin-top: -1.2em;}
         @media (width >= 768px) {}
-        @media (width >= 1440px) {}
+        @media (width >= 1440px) {margin-top: -3.2em;}
+        @media (width >= 1800px) {}
+    }
+    /* - End - */
+
+    .phone-features {
+        display: none;
+
+        @media (width >= 1440px) { display: block; margin-top: 4em; margin-left: -.1em;}
         @media (width >= 1800px) {}
     }
 }
