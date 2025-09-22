@@ -503,7 +503,8 @@ button {
 }
 
 .features {
-    position: absolute;
+    min-height: 62.56em;
+    max-height: 62.56em;
     height: 62.56em;
 
     /* Layout for each text in the feature-section - Start */
@@ -725,5 +726,81 @@ button {
 
         @media (width >= 1440px) { display: block; margin-top: 4em; margin-left: -.1em;}
         @media (width >= 1800px) {}
+    }
+}
+
+.howDoesItWork {
+    max-height: 57.19em;
+    min-height: 57.19em;
+    height: 57.19em;
+    background-color: var(--backgroundColor-gray);
+
+    @media (width >= 768px) {
+        height: 52.43em;
+    }
+
+    @media (width >= 1440px) {
+        height: 67.31em;
+    }
+
+    .howItWork-container {
+        height: 57.19em;
+
+        display: grid;
+        margin-top: 6em;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+
+        @media (width >= 390px) {}
+        @media (width >= 768px) {}
+        @media (width >= 1440px) {}
+        @media (width >= 1800px) {}
+    }
+
+    .heading-howItWorks { 
+        font-weight: 800;
+        font-size: 1.9em;
+        margin-top: 1.6em;
+        margin-left: .9em;
+        line-height: 1.8em;
+        color: var(--color-heading);
+
+        @media (width >= 390px) { margin-left: 2em;}
+    }
+
+    .text-h3-1 {
+        font-weight: 800;
+        font-size: 1.35em;
+        margin-top: 1.4em;
+        margin-left: 1.5em;
+
+        @media (width >= 390px) { margin-left: 3.2em;}
+    }
+    .text-h3-2 {
+        font-weight: 800;
+        font-size: 1.35em;
+        margin-top: -.1em;
+        margin-left: 3.5em;
+
+        @media (width >= 390px) {margin-left: 5.2em;}
+    }
+
+    .text-small {
+        list-style: 1em;
+        line-height: 1.55em;
+        margin-top: .1em;
+        margin-left: .5em;
+        color: var(--color-h2);
+
+        @media (width >= 390px) {margin-left: 1em;}
+    }
+
+    .phone-container {
+        margin-left: 1.6em;
+        .phone-screen { margin-top: -34.35em;}
+        .phone-frame { margin-top: -34.35em;}
+
+        @media (width >= 390px) { margin-left: 4em;}
+        
     }
 }
