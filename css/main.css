@@ -17,6 +17,7 @@
     --color-contactus-text: #22C55E;
     --color-darkModeSwitch: #ffffff;
     --color-placeholder-content: #9397AD;
+    --color-footertext: #9397AD;
     --borderColor-mail-placeholder: #D4D7E5;
     --color-gradient: linear-gradient(90deg, rgb(99, 102, 241) 0% ,rgb(139, 92, 246)50% ,rgb(217, 70, 239) 100%);
     --backgroundColor-btn: #6366F1;
@@ -2025,4 +2026,36 @@ button {
         }
 
     }
+}
+
+.footer {
+    height: 4em;
+
+    @media (width >= 768px) {
+        height: 3.8125em;
+    }
+
+    @media (width >= 1440px) {
+        height: 5em;
+    }
+
+    .footer-content {
+
+        .silicon {
+            margin-top: 3.5em;
+            text-align: center;
+            font-weight: 400;
+            font-size: 0.875em;
+            color:var(--color-footertext);
+
+            @media (width >= 1440px) {
+                margin-bottom: 2.5em;
+            }
+
+            @media (width >= 1800px) {
+                margin-top: 4em;
+            }
+        }
+    }
+
 }
