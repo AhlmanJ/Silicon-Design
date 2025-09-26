@@ -21,10 +21,11 @@
     --borderColor-mail-placeholder: #D4D7E5;
     --color-gradient: linear-gradient(90deg, rgb(99, 102, 241) 0% ,rgb(139, 92, 246)50% ,rgb(217, 70, 239) 100%);
     --backgroundColor-btn: #6366F1;
+    --backgroundColor-placeholder: #ffffff;
     --backgroundColor-section: #ffffff;
     --backgroundColor-gray: #F3F6FF;
     --backgroundColor-appbtn: #131022; 
-    --background-hero: radial-gradient(at bottom, rgba(99, 101, 241, 10%) 0%, rgba(219, 70, 239, 5%) 42%, rgba(241, 244, 253, 7%) 83%);
+    --background-hero: radial-gradient(at bottom, rgba(99, 101, 241, 0.027) 0%, rgba(219, 70, 239, 0) 42%, rgba(241, 244, 253, 0) 83%);
     --background-header: radial-gradient(at bottom, rgba(99, 101, 241, 0.027) 0%, rgba(219, 70, 239, 0) 42%, rgba(241, 244, 253, 0) 83%);
     --backgroundColor-slider: #9397AD;
     --accordion-border-color: #E2E5F1;
@@ -33,34 +34,49 @@
     --backgroundcolor-accordion-btn-closed: #F3F6FF;
     --color-accordion-btn-arrow-open: #ffffff;
     --color-accordion-btn-arrow-closed: #3e4265;
+    --box-shadow: rgba(190, 190, 190, 0.116);
+    --brands-box-shadow: #e2e5f133;
 }
 
-/* Color-scheme for dark mode*/
-[data-theme="dark"] {
+.html {
+    color-scheme: light;
+}
+
+/* Layout for dark-mode*/
+.dark {
+    color-scheme: dark;
+
     --color-white: #ffffff;
     --color-heading: #ffffff;
     --color-leadText: rgb(255, 255, 255, 1);
     --color-paragraph: rgba(255, 255, 255, 0.70);
-    --color-brands-border: #E2E5F1;
+    --color-brands-border: #1d1e2b;
     --color-h2: #ffffff;
     --color-navText: #33354D;
     --color-menuButton: #ffffff;
     --color-gradient: linear-gradient(90deg, rgb(99, 102, 241) 0% ,rgb(139, 92, 246)50% ,rgb(217, 70, 239) 100%);
     --backgroundColor-btn: #6366F1;
+    --backgroundColor-placeholder: #1d1e2b;
     --backgroundColor-section: #0B0F19;
-    --backgroundColor-gray: #0b0f19dc; 
+    --backgroundColor-gray: #3439462d;
     --backgroundColor-slider: #9397AD;
     --backgroundColor-appbtn: #eff2fc;
-    --background-hero: #3E4265; background: linear-gradient(355deg, rgba(62, 66, 101, 1) 0%, rgba(19, 16, 34, 1) 0%, rgba(11, 15, 25, 1) 100%);
+    --background-header: rgba(241, 244, 253, 0.014);
     --accordion-border-color: rgba(255, 255, 255, 0.15);
-    --accordion-background-color: #131022;
+    --accordion-background-color: #3439462d;
     --color-accordion-btn-arrow-closed: #ffffff;
     --backgroundcolor-accordion-btn-closed: #585C7B;
+    --background-hero: radial-gradient(at bottom, rgba(99, 101, 241, 10%) 0%, rgba(219, 70, 239, 5%) 42%, rgba(241, 244, 253, 0.014) 83%);
+    --box-shadow: #3439462d;
+    --borderColor-mail-placeholder: #6061687c;
+    --brands-box-shadow: #0B0F19;
+
 }
 
-.body {
+body {
     font-size: 16px;
     scroll-behavior: smooth;
+    background-color: var(--backgroundColor-section);
 }
 
 /* ----- Container to set viewport settings ----- */
@@ -69,7 +85,7 @@
     margin: 0;
     padding: 0;
     font-family: manrope;
-
+    
 }
 
 button {
@@ -105,14 +121,31 @@ button {
         align-items: center;
         justify-content: space-between;
 
-        .siliconLogo { 
+        
+        .siliconLogo {
             margin-left: 1em; 
-            
+   
             @media (width >= 768px) { margin-left: 2.13em;}
             @media (width >= 992px) { margin-left: 4em;}
             @media (width >= 1400px) { margin-left: 5em;}
-            @media (width >= 1800px) { margin-left: 19em;} 
+            @media (width >= 1800px) { margin-left: 19em;}
         }
+
+        .siliconLogo-dark {
+            margin-left: 1em; 
+
+            @media (width >= 768px) { margin-left: 2.13em;}
+            @media (width >= 992px) { margin-left: 4em;}
+            @media (width >= 1400px) { margin-left: 5em;}
+            @media (width >= 1800px) { margin-left: 19em;}
+        }
+
+        .dark & .siliconLogo {
+            display: none;
+        }
+
+        .siliconLogo-dark {display: none;}
+        .dark & .siliconLogo-dark {display: inline;}
 
         .header-buttons {
             display: flex;
@@ -209,7 +242,6 @@ button {
 .hero {
     width: 100dvw;
     height: 31.19rem;
-    background: var(--background-hero);
     @media (width >= 768px) { height: 40em;}
     @media (width >= 1440px) { height: 50em;}
 
@@ -219,7 +251,7 @@ button {
         margin-left: .5em;
         grid-template-columns: 1fr;
         grid-template-rows: 9em 5em 5em 8em;
-
+        background: var(--background-hero);
         grid-template-areas:"heading" 
                             "heading-h2"
                             "apps";
@@ -372,36 +404,99 @@ button {
         @media (width >= 1800px) { margin-left: 8.2em;}
 
         .appStore-btn {
-        height: 3.15em;
-        max-width: 18em;
-        margin-top: 2em;
-        border-radius: .5em;
-        background-color: var(--backgroundColor-appbtn);
+            height: 3.15em;
+            width: 17em;
+            margin-top: 2em;
+            margin-left: 4em;
+            border-radius: .5em;
+            background-color: var(--backgroundColor-appbtn);
 
-        #AppStore-img {margin-top: .4em; margin-left: 4.5em; height: 2.2em;}
+            @media (width >= 375px) { width: 20em; margin-left: 4.9em;}
+            @media (width >= 390px) { width: 23em; margin-top: 2.3em; margin-left: 9.5em;}
+            @media (width >= 425px) { width: 24em; margin-left: 8em;}
+            @media (width >= 768px) { width: 8em; margin-top: 0em; margin-left: 0em;}
+            @media (width >= 992px) { margin-left: -.5em;}
+            @media (width >= 1440px) { width: 11.25em; height: 3.25em; margin-left: -9em; margin-right: 0;}
 
-        @media (width >= 390px) {max-width: 23em; margin-top: 2.3em; margin-left: 2em; #AppStore-img {margin-left: 6.9em;}}
-        @media (width >= 768px) {max-width: 7.88em; margin-top: 0em; margin-left: 0em; #AppStore-img {width: 6.2em; margin-top: .4em; margin-left: .3em;}}
-        @media (width >= 992px) {margin-left: -.5em;}
-        @media (width >= 1440px) {max-width: 11.25em; height: 3.25em; margin-left: -9em; margin-right: 0; #AppStore-img {width: 8em; margin-top: .5em; margin-left: 1.2em;}}
+            .appStore-img {
+                margin-top: .4em; 
+                margin-left: 4em; 
+                height: 2.2em;
+
+                @media (width >= 375px) { margin-left: 4.9em;}
+                @media (width >= 390px) { margin-left: 6em;}
+                @media (width >= 425px) { margin-left: 8em;}
+                @media (width >= 768px) { width: 6.2em; margin-top: 0.4em; margin-left: 0.3em;}
+                @media (width >= 1440px) { width: 8em; margin-top: 0.5em; margin-left: 1.2em; }
+            }
+            
+            .dark & .appStore-img {display: none;}
+
+            .appStore-dark {display: none;}
+
+            .dark & .appStore-dark {
+                display: block;
+                margin-top: .4em; 
+                margin-left: 4em; 
+                height: 2.2em;
+
+                @media (width >= 375px) { margin-left: 4.9em;}
+                @media (width >= 390px) { margin-left: 6em;}
+                @media (width >= 425px) { margin-left: 8em;}
+                @media (width >= 768px) { width: 6.2em; margin-top: 0.4em; margin-left: 0.3em;}
+                @media (width >= 1440px) { width: 8em; margin-top: 0.5em; margin-left: 1.2em; }
+            }
+
         }
-
+ 
         .googlePlay-btn {
-        height: 3.15em;
-        max-width: 18em;
-        margin-top: 6em;
-        border-radius: .5em;
-        background-color: var(--backgroundColor-appbtn);
+            height: 3.15em;
+            width: 17em;
+            margin-top: 6em;
+            margin-left: 4em;
+            border-radius: .5em;
+            background-color: var(--backgroundColor-appbtn);
 
-        #GooglePlay-img {margin-top: .4em; margin-left: 3.8em; height: 2.2em;}
+            @media (width >= 375px) { width: 20em; margin-left: 4.9em;}
+            @media (width >= 390px) { width: 23em; margin-top: 6.5em; margin-left: 9.5em;}
+            @media (width >= 425px) { width: 24em; margin-left: 8em;}
+            @media (width >= 768px) { width: 9em; margin-left: 9em; margin-top: 0em;}
+            @media (width >= 1440px) { width: 11.25em; height: 3.25em; margin-left: 3.6em;}
 
-        @media (width >= 390px) {max-width: 23em; margin-top: 6.5em; margin-left: 2em; #GooglePlay-img {margin-left: 6.3em;}}
-        @media (width >= 768px) {max-width: 8.63em; margin-left: 9em; margin-top: 0em; #GooglePlay-img {width: 6.8em; margin-top: .4em; margin-left: .5em;}}
-        @media (width >= 1440px) {max-width: 11.25em; height: 3.25em; margin-left: 3.6em; #GooglePlay-img {width: 8em; margin-top: .5em; margin-left: 1.1em;}}
+            .googlePlay-img {
+                margin-top: .4em;
+                margin-left: 3.8em;
+                height: 2.2em;
+
+                @media (width >= 375px) { margin-left: 4.9em;}
+                @media (width >= 390px) { margin-left: 6em;}
+                @media (width >= 425px) { margin-left: 8em;}
+                @media (width >= 768px) { height: 1.6em; margin-top: 0.7em; margin-left: 0.6em;}
+                @media (width >= 1440px) { height: 2em; margin-top: 0.6em; margin-left: 1.1em;}
+            }
+            
+            .dark & .googlePlay-img {display: none;}
+
+            .googlePlay-dark { display: none;}
+
+            .dark & .googlePlay-dark {
+                display: block;
+                margin-top: .4em;
+                margin-left: 3.8em;
+                height: 2.2em;
+
+                @media (width >= 375px) { margin-left: 4.9em;}
+                @media (width >= 390px) { margin-left: 6em;}
+                @media (width >= 425px) { margin-left: 8em;}
+                @media (width >= 768px) { height: 1.6em; margin-top: 0.7em; margin-left: 0.6em;}
+                @media (width >= 1440px) { height: 2em; margin-top: 0.6em; margin-left: 1.1em;}
+            }
         }
 
+        
+        
     }
-
+    
     .texth3 {
         display: none; 
         @media (width >= 768px) { display: block;}
@@ -432,6 +527,7 @@ button {
 .brands {
     height: 9.19rem;
     width: 100dvw;
+
     /* @media - to not show the section when on mobile-devices */
     @media (width >= 0px) {height: 0rem;}
 
@@ -441,7 +537,6 @@ button {
         justify-content: space-around;
         margin-top: 3em;
         margin-left: .5em;
-           
         @media (width >= 1440px) {
             height: 15.625em;
         }
@@ -494,7 +589,7 @@ button {
             #b3 { width: 12.25em; height: 6.25em;}
             #b4 { width: 12.25em; height: 6.25em;}
             #b5 {display: flex; width: 12.25em; height: 6.25em;}
-            #b6 {display: flex; width: 12.25em; height: 6.25em; box-shadow: 1px 3px 1px 2px #e2e5f133;}
+            #b6 {display: flex; width: 12.25em; height: 6.25em; box-shadow: 1px 3px 1px 2px var( --brands-box-shadow);}
         }
 
         @media (width >= 1800px) {
@@ -1219,8 +1314,8 @@ button {
             padding-bottom: 1.5em;
             padding-left: 1.5em;
             border-radius: 0.5em;
-            box-shadow: 1px 0.5px 0.5px 1.5px rgba(190, 190, 190, 0.116);
-            background-color: var(--color-white);
+            box-shadow: 1px 0.5px 0.5px 1.5px var(--box-shadow);
+            background-color: var(--accordion-background-color);
 
             @media (width >= 1440px) {
                margin-left: 10em; 
@@ -1260,8 +1355,8 @@ button {
             padding-bottom: 1.5em;
             padding-left: 1.5em;
             border-radius: 0.5em;
-            box-shadow: 1px 0.5px 0.5px 1.5px rgba(190, 190, 190, 0.116);
-            background-color: var(--color-white);
+            box-shadow: 1px 0.5px 0.5px 1.5px var(--box-shadow);
+            background-color: var(--accordion-background-color);
 
             @media (width >= 1800px) { margin-right: -2em;}
 
@@ -1529,7 +1624,7 @@ button {
 
                 @media (width >= 1440px) {
                     height: 4.25em;
-                    width: 46em;
+                    width: 47em;
                 }
 
             }
@@ -1736,7 +1831,7 @@ button {
 }
 
 .subscribe {
-
+    
     .subscribe-content {
         display: grid;
         grid-template-columns: 5.5em 1fr;
@@ -1951,7 +2046,7 @@ button {
                 border-top: 1px solid;
                 border-bottom: 1px solid;
                 border-color: var(--borderColor-mail-placeholder);
-                background-color: var(--accordion-background-color);
+                background-color: var(--backgroundColor-placeholder);
 
                 @media (width >= 375px) {
                     width: 3.5em;
@@ -1986,6 +2081,7 @@ button {
                 border-left: none;
                 border-right: none;
                 border-color: var(--borderColor-mail-placeholder);
+                background-color: var(--backgroundColor-placeholder);
                 
                 &::placeholder { 
                     font-weight: 400;
@@ -2030,7 +2126,7 @@ button {
 
 .footer {
     height: 4em;
-
+    
     @media (width >= 768px) {
         height: 3.8125em;
     }
