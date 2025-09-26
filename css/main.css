@@ -16,6 +16,8 @@
     --color-menuButton: #3E4265;
     --color-contactus-text: #22C55E;
     --color-darkModeSwitch: #ffffff;
+    --color-placeholder-content: #9397AD;
+    --borderColor-mail-placeholder: #D4D7E5;
     --color-gradient: linear-gradient(90deg, rgb(99, 102, 241) 0% ,rgb(139, 92, 246)50% ,rgb(217, 70, 239) 100%);
     --backgroundColor-btn: #6366F1;
     --backgroundColor-section: #ffffff;
@@ -439,7 +441,9 @@ button {
         margin-top: 3em;
         margin-left: .5em;
            
-        @media (width >= 1440px) {height: 15.625em;}
+        @media (width >= 1440px) {
+            height: 15.625em;
+        }
 
         /* a "box" for "wrapping" all the logo-boxes in a row.*/
         .box {
@@ -492,9 +496,9 @@ button {
             #b6 {display: flex; width: 12.25em; height: 6.25em; box-shadow: 1px 3px 1px 2px #e2e5f133;}
         }
 
-        @media (width >= 1800px) { 
-            margin-right: 10.5em;
-            margin-left: 17.3em;
+        @media (width >= 1800px) {
+            margin-left: 17em; 
+            margin-right: 11.5em;
         }
     }
 }
@@ -1728,4 +1732,297 @@ button {
             }
         }
 
+}
+
+.subscribe {
+
+    .subscribe-content {
+        display: grid;
+        grid-template-columns: 5.5em 1fr;
+        grid-template-rows: 1fr 1fr;
+        height: 14em;
+        width: 18em;
+        border-radius: 0.5em;
+        margin-left: 1em;
+        background-color: var(--backgroundColor-gray);
+
+        .bell-img { grid-column: 1; grid-row: 1;}
+        .subscribe-text-top1 { grid-column: 2; grid-row: 1;}
+        .subscribe-text-bottom1 { grid-column: 2; grid-row: 1;}
+        .form-container { grid-column: 1/span 2; grid-row: 2;}
+
+        @media (width >= 375px) {
+            width: 19em;
+            height: 15.69em;
+            width: 20.2em;
+            margin-left: 1.6em;
+        }
+
+        @media (width >= 390px) {
+            height: 15.69em;
+            width: 22em;
+            margin-left: 1.2em;
+
+        }
+
+        @media (width >= 425px) {
+            height: 15em;
+            width: 24em;
+            margin-left: 1.3em;
+            
+        }
+
+        @media (width >= 768px) {
+            height: 13.94em;
+            width: 45.5em;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        @media (width >= 992px) {
+            width: 52.7em;
+            margin-left: 4.7em;
+        }
+
+        @media (width >= 1440px) {
+            width: 81.2em;
+            margin-left: 5em;
+        }
+
+        @media (width >= 1800px) {
+            width: 85.5em;
+            margin-left: 17.5em;
+        }
+
+        h4 {
+            font-size: 1.35em;
+            font-weight: 800;
+
+            @media (width >= 768px) {
+                font-size: 1.42em;
+            }
+        }
+
+        .bell-img {
+            margin-left: 1em;
+
+            @media (width >= 375px) {
+                margin-top: 1em;
+            }
+
+            @media (width >= 768px) {
+                margin-leftt: 1.5em;
+            }
+
+            @media (width >= 992px) {
+                margin-left: 3em;
+            }
+
+            @media (width >= 1440px) {
+                margin-left: 6.3em;
+            }
+        }
+
+        .subscribe-text-top1 {
+            margin-left: 1em;
+            font-weight: 800;
+            color: var(--color-heading);
+
+            
+            @media (width >= 375px) {
+                margin-top: 2.5em;
+            }
+
+            @media (width >= 768px) {
+                margin-top: 3.8em;
+            }
+
+            @media (width >= 992px) {
+                margin-left: -4em;
+            }
+
+            @media (width >= 1440px) {
+                display: none;
+            }
+
+        }
+
+        .subscribe-text-top2 {
+            margin-left: 1em;
+            font-weight: 800;
+            color: var(--color-heading);
+
+            @media (width >= 0px) {
+                display: none;
+            }
+
+            @media (width >= 1440px) {
+                display: flex;
+                margin-top: 2em;
+                margin-left: -9.5em;
+            }
+
+            @media (width >= 1800px) {
+                margin-left: -9em;
+            }
+        }
+
+        .subscribe-text-bottom1 {
+            font-weight: 800;
+            margin-top: -1.5em;
+            margin-left: 1em;
+            color: var(--color-heading);
+
+            
+            @media (width >= 375px) {
+                margin-top: -1.3em;
+            }
+
+            @media (width >= 768px) {
+                margin-top: -1.5em;
+            }
+
+            @media (width >= 992px) {
+                margin-left: -4em;
+            }
+
+            @media (width >= 1440px) {
+                display: none;
+            }
+        }
+
+         .subscribe-text-bottom2 {
+            font-weight: 800;
+            margin-top: -1.5em;
+            margin-left: 1em;
+            color: var(--color-heading);
+
+            @media (width >= 0px) {
+                display: none;
+            }
+
+            @media (width >= 1440px) {
+                display: flex;
+                margin-top: -3.5em;
+                margin-left: -9.5em;
+            }
+
+            @media (width >= 1800px) {
+                margin-left: -9em;
+            }
+         }
+
+        .form-container {
+            display: flex;
+            margin-top: 1.5em;
+            margin-left: 1em;
+            
+            @media (width >= 425px) {
+                width: 22em;
+            }
+
+            @media (width >= 768px) {
+                margin-right: 1.5em;
+            }
+
+            @media (width >= 1024px) {
+                margin-right: 3em;        
+            }
+
+            @media (width >= 1440px) {
+                width: 29em;
+                margin-left: -8em;
+                margin-right: 8em;
+            }
+
+            @media (width >= 1800px) {
+                margin-right: 8em;
+            }
+
+            .email-icon {    
+                height: 3.3em;
+                width: 2.88em;
+                margin-left: 0em;
+                
+                border-radius: .5em 0 0 .5em;
+                border-left: 1px solid;
+                border-top: 1px solid;
+                border-bottom: 1px solid;
+                border-color: var(--borderColor-mail-placeholder);
+                background-color: var(--accordion-background-color);
+
+                @media (width >= 375px) {
+                    width: 3.5em;
+                }
+
+        
+                .material-symbols-outlined {
+                    position: absolute;
+                    margin-top: .65em;
+                    margin-left: .6em;
+                    color: var(--color-placeholder-content);
+
+                    @media (width >= 320px) {
+                        margin-top: 0.55em;
+                    }
+
+                    @media (width >= 375px) {
+                        margin-top: 0.55em;
+                    }
+
+                    @media (width >= 425px) {
+                        margin-top: 0.55em;
+                    }
+                }
+            }
+
+            .email-placeholder {
+                height: 3.3em;
+                width: 7.5em;
+                border: 1px solid;
+                cursor: pointer;
+                border-left: none;
+                border-right: none;
+                border-color: var(--borderColor-mail-placeholder);
+                
+                &::placeholder { 
+                    font-weight: 400;
+                    color: var(--color-placeholder-content);
+                }
+
+                &:focus {
+                    font-family: manrope;
+                    font-weight: 400;
+                    outline: none;
+                    color: #565973;
+                }
+
+                @media (width >= 375px) {
+                    width: 9.5em;
+                    margin-left: -0.5em;
+                }
+
+                @media (width >= 390px) {
+                    width: 11.8em;
+                }
+
+                @media (width >= 425px) {
+                    width: 20em;
+                }
+
+            }
+
+            .subscribe-btn {
+                height: 3.27em;
+                width: 7.17em;
+                font-weight: 600;
+                align-items: center;
+                justify-content: center;
+                border: none;
+                border-radius: 0 .5em .5em 0;
+            }
+        }
+
+    }
 }
