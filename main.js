@@ -18,6 +18,7 @@ items.forEach(item => {
 const darkmodeSwitch = document.querySelector('#darkmode-switch')
 const hasDarkmode = localStorage.getItem('darkmode')
 
+// Check localstorage if settings are set to darkmode or not. If darkmode are selected - Set to darkmode. //
 if(hasDarkmode == null) {
     if(window.matchMedia('(prefers-color-scheme: dark)').matches) {
         enableDarkMode()
@@ -30,6 +31,7 @@ if(hasDarkmode == null) {
     disableDarkMode()
 }
 
+// Enable/disable darkmode with the switch. //
 darkmodeSwitch.addEventListener('change', () => {
     if(darkmodeSwitch.checked) {
         enableDarkMode()
@@ -40,6 +42,7 @@ darkmodeSwitch.addEventListener('change', () => {
     }
 })
 
+// Add/remove the class "dark" to activate/disable darkmode. //
 function enableDarkMode() {
     darkmodeSwitch.checked = true
     document.documentElement.classList.add('dark')
