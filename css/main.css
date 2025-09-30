@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-/* Color-scheme for light mode */
+/* Colors for lightmode. */
 :root {
     --color-white: #ffffff;
     --color-heading: #0B0F19;
@@ -42,7 +42,7 @@
     color-scheme: light;
 }
 
-/* Layout for dark-mode*/
+/* Colors for darkmode */
 .dark {
     color-scheme: dark;
 
@@ -79,7 +79,6 @@ body {
     background-color: var(--backgroundColor-section);
 }
 
-/* ----- Container to set viewport settings ----- */
 .container {
     width: 100%;
     margin: 0;
@@ -88,6 +87,7 @@ body {
     
 }
 
+/* Basic settings for buttons. */
 button {
     display: flex;
     border: none;
@@ -121,7 +121,7 @@ button {
         align-items: center;
         justify-content: space-between;
 
-        
+        /* Switches between two different images depending on wheter the user is using light or dark mode. - Start */
         .siliconLogo {
             margin-left: 1em; 
    
@@ -146,6 +146,7 @@ button {
 
         .siliconLogo-dark {display: none;}
         .dark & .siliconLogo-dark {display: inline;}
+        /* ---------------- End -------------------------*/
 
         .header-buttons {
             display: flex;
@@ -162,8 +163,8 @@ button {
                 font-weight: 700;
                 color: var(--color-paragraph);
 
-                 @media (width >= 768px) { display: flex; color: #131022;}
-                 @media (width >= 1024px) { color:var(--color-paragraph);}
+                @media (width >= 768px) { display: flex; color: #131022;}
+                @media (width >= 1024px) { color:var(--color-paragraph);}
             }
 
             /* ----- Toggle-switch START ----- */
@@ -208,8 +209,7 @@ button {
                 .toggle-input:checked ~ .slider::after {
                     transform: translateX(1.25em);
                     transition: .2s; /*For transition left- to right-side. */
-                    background-color: var(--color-white);
-                    
+                    background-color: var(--color-white); 
                 } 
                 
                 @media (width >= 768px) {margin-right: 4em;}
@@ -385,13 +385,13 @@ button {
 
     @media (width >= 1800px) {
         #h1-1 { margin-top: 1.7em; margin-left: 5.2em;}
-        #h1-2 { margin-top: -1.45em; margin-left: 5.2em;}
-        #h4-1 { margin-left: 16.3em; margin-top: -8.3em;}
-        #h4-2 { margin-left: 16.3em; margin-top: -.2em;}
+        #h1-2 { margin-top: -1.56em; margin-left: 5.2em;}
+        #h4-1 { margin-left: 16.3em; margin-top: -8.5em;}
+        #h4-2 { margin-left: 16.3em; margin-top: -1.4em;}
     }
     /* - End -*/
 
-    /* Container for the two buttons*/
+    /* Container for the two buttons */
     .app-wrapper{
         display: grid;
         margin-left: -5em;
@@ -400,8 +400,8 @@ button {
         @media (width >= 425px) { margin-left: -9em;}
         @media (width >= 768px) { margin-top: -13em; margin-left: 1em;}
         @media (width >= 992px) { margin-top: -13em;}
-        @media (width >= 1440px) { margin-top: -44.5em; margin-left: 4.3em;}
-        @media (width >= 1800px) { margin-left: 8.2em;}
+        @media (width >= 1440px) { margin-top: -44.5em; margin-left: 6em;}
+        @media (width >= 1800px) { margin-left: 10.2em;}
 
         .appStore-btn {
             height: 3.15em;
@@ -418,6 +418,7 @@ button {
             @media (width >= 992px) { margin-left: -.5em;}
             @media (width >= 1440px) { width: 11.25em; height: 3.25em; margin-left: -9em; margin-right: 0;}
 
+            /* Switches between two different images depending on wheter the user is using light or dark mode. - Start */
             .appStore-img {
                 margin-top: .4em; 
                 margin-left: 4em; 
@@ -446,7 +447,7 @@ button {
                 @media (width >= 768px) { width: 6.2em; margin-top: 0.4em; margin-left: 0.3em;}
                 @media (width >= 1440px) { width: 8em; margin-top: 0.5em; margin-left: 1.2em; }
             }
-
+            /* ---------------- End -------------------------*/
         }
  
         .googlePlay-btn {
@@ -463,6 +464,7 @@ button {
             @media (width >= 768px) { width: 9em; margin-left: 9em; margin-top: 0em;}
             @media (width >= 1440px) { width: 11.25em; height: 3.25em; margin-left: 3.6em;}
 
+            /* Switches between two different images depending on wheter the user is using light or dark mode. - Start */
             .googlePlay-img {
                 margin-top: .4em;
                 margin-left: 3.8em;
@@ -491,10 +493,8 @@ button {
                 @media (width >= 768px) { height: 1.6em; margin-top: 0.7em; margin-left: 0.6em;}
                 @media (width >= 1440px) { height: 2em; margin-top: 0.6em; margin-left: 1.1em;}
             }
-        }
-
-        
-        
+            /* ---------------- End -------------------------*/
+        }  
     }
     
     .texth3 {
@@ -520,7 +520,7 @@ button {
     .heroPhone-desktop {
         display: none;
 
-        @media (width >= 1440px) {display: block; margin-top: 6.95em; margin-right: 8.25em;}
+        @media (width >= 1440px) {display: block; margin-top: 6.95em; margin-bottom: -0.2em; margin-right: 8.25em;}
     }
 }
 
@@ -541,7 +541,7 @@ button {
             height: 15.625em;
         }
 
-        /* a "box" for "wrapping" all the logo-boxes in a row.*/
+        /* A "box" to "wrapping" all the logo-boxes in a row. */
         .box {
             display: flex;
             align-items: center;
@@ -554,7 +554,7 @@ button {
             @media (width >= 1440px) { margin-bottom: 4.73em;}
         }
 
-        /* No logos on mobile-devices*/
+        /* No logos on mobile-devices */
         @media (width >= 0px) {
             #b1 {display: none;}
             #b2 {display: none;}
@@ -665,8 +665,8 @@ button {
 
         @media (width >= 768px) {
             margin-top: 9.19em;
-            margin-left: .7em;
-            margin-right: .7em;
+            margin-left: 0.7em;
+            margin-right: 0.7em;
             grid-template-columns: 1fr 1fr;
             grid-template-rows: repeat(5, 1fr);
 
@@ -736,7 +736,7 @@ button {
         .features-heading {grid-column: 2; grid-row: 1; margin-top: -0.1em; margin-bottom: 0em; margin-left: 1em; margin-right: 0em;}
         .features-text { grid-column: 2; grid-row: 2; margin-top: -1.5em; margin-left: 1.2em;}
 
-        @media (width >= 390px) {margin-top: .8em; .features-text {margin-top: -1.2em; margin-left: 1.25em; line-height: 1.6em;}}
+        @media (width >= 390px) {margin-top: 0.8em; .features-text {margin-top: -1.2em; margin-left: 1.25em; line-height: 1.6em;}}
         @media (width >= 768px) {.features-text {margin-right: 2em;}}
         @media (width >= 1440px) {margin-top: -4em; .features-text {margin-right: 1em;}}
     }
@@ -750,7 +750,7 @@ button {
         .features-heading {grid-column: 2; grid-row: 1; margin-top: -0.1em; margin-bottom: 0em; margin-left: 1.2em; margin-right: 0em;}
         .features-text { grid-column: 2; grid-row: 2; margin-top: -1.5em; margin-left: 1.56em; margin-right: 0em;}
 
-        @media (width >= 390px) { margin-top: .8em; margin-right: .9em;} .features-text {margin-top: -1.2em;}
+        @media (width >= 390px) { margin-top: 0.8em; margin-right: 0.9em;} .features-text {margin-top: -1.2em;}
         @media (width >= 768px) {.features-text {margin-right: 2em;}}
         @media (width >= 1440px) {margin-top: -4em; margin-left: 3em; .features-text {margin-right: -3em;}}
     }
@@ -764,7 +764,7 @@ button {
         .features-heading {grid-column: 2; grid-row: 1; margin-top: -0.1em; margin-bottom: 0em; margin-left: 1.2em; margin-right: 0em;}
         .features-text { grid-column: 2; grid-row: 2; margin-top: -1.5em; margin-left: 1.56em; margin-right: 0em;}
 
-        @media (width >= 390px) { margin-top: .8em; margin-right: .9em;} .features-text {margin-top: -1.2em;}
+        @media (width >= 390px) { margin-top: 0.8em; margin-right: 0.9em;} .features-text {margin-top: -1.2em;}
         @media (width >= 768px) {.features-text {margin-left: -.2em;}}
         @media (width >= 1440px) {margin-top: -3.7em; .features-text { margin-left: 1.5em; margin-right: -.5em;}}
     }
@@ -778,7 +778,7 @@ button {
         .features-heading {grid-column: 2; grid-row: 1; margin-top: -0.1em; margin-bottom: 0em; margin-left: 1.2em; margin-right: 0em;}
         .features-text { grid-column: 2; grid-row: 2; margin-top: -1.5em; margin-left: 1.56em; margin-right: 0em;}
 
-        @media (width >= 390px) { margin-top: .8em; margin-right: .9em;} .features-text {margin-top: -1.2em;}
+        @media (width >= 390px) { margin-top: 0.8em; margin-right: 0.9em;} .features-text {margin-top: -1.2em;}
         @media (width >= 768px) {.features-text {margin-right: 2em;}}
         @media (width >= 1440px) {margin-top: -3.7em; margin-left: 3em; .features-text {margin-right: -1.5em;}}
     }
@@ -792,7 +792,7 @@ button {
         .features-heading {grid-column: 2; grid-row: 1; margin-top: -0.1em; margin-bottom: 0em; margin-left: 1.2em; margin-right: 0em;}
         .features-text { grid-column: 2; grid-row: 2; margin-top: -1.5em; margin-left: 1.56em; margin-right: 0em;}
 
-        @media (width >= 390px) { margin-top: .8em; margin-right: .9em;} .features-text {margin-top: -1.2em;}
+        @media (width >= 390px) { margin-top: 0.8em; margin-right: 0.9em;} .features-text {margin-top: -1.2em;}
         @media (width >= 768px) {.features-text {margin-right: 1.5em;}}
         @media (width >= 1440px) {margin-top: -3.2em; .features-text {margin-right: -.5em;}}
     }
@@ -806,7 +806,7 @@ button {
         .features-heading {grid-column: 2; grid-row: 1; margin-top: -0.1em; margin-bottom: 0em; margin-left: 1.2em; margin-right: 0em;}
         .features-text { grid-column: 2; grid-row: 2; margin-top: -1.5em; margin-left: 1.56em; margin-right: 0em;}
 
-        @media (width >= 390px) { margin-top: .8em; margin-right: .9em;} .features-text {margin-top: -1.2em;}
+        @media (width >= 390px) { margin-top: 0.8em; margin-right: 0.9em;} .features-text {margin-top: -1.2em;}
         @media (width >= 768px) {.features-text {margin-right: 1.5em;}}
         @media (width >= 1440px) {margin-top: -3.2em; margin-left: 3em; .features-text {margin-right: -1em;}}
     }
@@ -821,6 +821,7 @@ button {
 
 .howDoesItWork {
     height: 58.19rem;
+    width: 100%;
     background-color: var(--backgroundColor-gray);
 
     @media (width >= 768px) {
@@ -856,6 +857,7 @@ button {
             .text-small3 { grid-column: 1/span 3; grid-row: 4;}
             .text-small4 { grid-column: 1/span 3; grid-row: 4;}
         }
+
         @media (width >= 1440px) {
             grid-template-columns: 1fr 1fr 1fr;
             grid-template-rows: repeat(4, 1fr);
@@ -865,7 +867,6 @@ button {
             .text-h3-5 { grid-column: 2; grid-row: 3;}
             .text-small5 { grid-column: 1/span 3; grid-row: 4;}
             .text-small6 { grid-column: 1/span 3; grid-row: 5;}
-
         }
     }
 
@@ -977,7 +978,6 @@ button {
         @media (width >= 768px) {display: block; margin-top: 1.5em; margin-left: 10.9em;}
         @media (width >= 992px) {margin-left: 17.9em;}
         @media (width >= 1440px) {display: none;}
-
     } 
     
     .text-small4 {
@@ -1027,8 +1027,7 @@ button {
         @media (width >= 390px) { margin-left: 4em;}
         @media (width >= 768px) { margin-left: 15.5em;}
         @media (width >= 992px) { margin-left: 24em;}
-        @media (width >= 1440px) {display: none;}
-        
+        @media (width >= 1440px) {display: none;} 
     }
 
     .phone-screen2 {
@@ -1240,11 +1239,10 @@ button {
                             background-color: var(--backgroundColor-gray);
                         }
 
-                         .wrapper2-txt { 
+                        .wrapper2-txt { 
                             line-height: .5em;
 
                         }
-
                     }
 
                     #feature-btn2 { 
@@ -1270,6 +1268,7 @@ button {
 
 .testimonials {
     height: 33.875rem;
+    width: 100%;
     @media (width >= 0px) {height: 0rem; display: none;}
     @media (width >= 1440px) {height: 33.875em; display: contents;}
     
@@ -1461,6 +1460,7 @@ button {
             .contact-container { grid-column: 1; grid-row: 3/span 4}
         }
 
+        /* Text for mobile-devices. - Start */
         #faq-heading1 {
             margin-top: 2em;
             text-align: center;
@@ -1489,7 +1489,9 @@ button {
 
             @media (width >= 768px) { display: none;}
         }
+        /* Text for mobile-devices. - End */
 
+        /* Text for tablet and desktop. - Start */
         #faq-heading3 {
             margin-top: 2em;
 
@@ -1560,10 +1562,10 @@ button {
                 margin-left: -12em;
             }
         }
+        /* Text for tablet and desktop. - End */
 
         /* Accordion - Start*/
         .faq-container {
-            
             cursor: pointer;
             width: 18em;
             margin: auto;
@@ -1615,6 +1617,10 @@ button {
                 border-color: var(--accordion-border-color);
                 background-color: var(--accordion-background-color);
 
+                #br { @media (width >= 768px) { 
+                    display: none;} 
+                }
+
                 @media (width >= 425px) { height: 5em;}
 
                 @media (width >= 768px) { 
@@ -1626,9 +1632,8 @@ button {
                     height: 4.25em;
                     width: 47em;
                 }
-
             }
-
+            
             .accordion-icon {
                 cursor: pointer;
                 margin-right: .5em;
@@ -1647,9 +1652,10 @@ button {
                     border: solid var(--color-accordion-btn-arrow-closed);
                     border-width: 0 2px 2px 0;
                     transform: translate(-50%, -50%) rotate(45deg);
+                    
                 }
             }
-            
+
             .active .accordion-icon {
             cursor: pointer;
             height: 3em;
@@ -1689,7 +1695,6 @@ button {
 
             .item.active .answer{
                 max-height: 20em;
-
             }
         }
     }
@@ -1722,6 +1727,11 @@ button {
 
             @media (width >= 768px) { 
                 display: flex;
+            }
+
+            @media (width >= 1024px) {
+                margin-left: 5.8em;
+                max-width: 50.5em;
             }
 
             @media (width >= 1440px) {
@@ -1858,14 +1868,12 @@ button {
             height: 15.69em;
             width: 22em;
             margin-left: 1.2em;
-
         }
 
         @media (width >= 425px) {
             height: 15em;
             width: 24em;
             margin-left: 1.3em;
-            
         }
 
         @media (width >= 768px) {
@@ -1908,6 +1916,7 @@ button {
             }
 
             @media (width >= 768px) {
+                margin-top: -1em;
                 margin-leftt: 1.5em;
             }
 
@@ -1920,6 +1929,7 @@ button {
             }
         }
 
+        /* Text for mobile devices and tablets. */
         .subscribe-text-top1 {
             margin-left: 1em;
             font-weight: 800;
@@ -1931,7 +1941,7 @@ button {
             }
 
             @media (width >= 768px) {
-                margin-top: 3.8em;
+                margin-top: 2em;
             }
 
             @media (width >= 992px) {
@@ -1944,6 +1954,7 @@ button {
 
         }
 
+        /* Text for desktop. */
         .subscribe-text-top2 {
             margin-left: 1em;
             font-weight: 800;
@@ -1955,7 +1966,7 @@ button {
 
             @media (width >= 1440px) {
                 display: flex;
-                margin-top: 2em;
+                margin-top: -0.7em;
                 margin-left: -9.5em;
             }
 
@@ -1964,6 +1975,7 @@ button {
             }
         }
 
+        /* Text for mobile devices and tablets. */
         .subscribe-text-bottom1 {
             font-weight: 800;
             margin-top: -1.5em;
@@ -1976,7 +1988,7 @@ button {
             }
 
             @media (width >= 768px) {
-                margin-top: -1.5em;
+                margin-top: -1.6em;
             }
 
             @media (width >= 992px) {
@@ -1988,7 +2000,8 @@ button {
             }
         }
 
-         .subscribe-text-bottom2 {
+        /* Text for desktop. */
+        .subscribe-text-bottom2 {
             font-weight: 800;
             margin-top: -1.5em;
             margin-left: 1em;
@@ -2000,15 +2013,16 @@ button {
 
             @media (width >= 1440px) {
                 display: flex;
-                margin-top: -3.5em;
+                margin-top: -2.8em;
                 margin-left: -9.5em;
             }
 
             @media (width >= 1800px) {
                 margin-left: -9em;
             }
-         }
+        }
 
+        /* "wrapper" for the email form. - Start */
         .form-container {
             display: flex;
             margin-top: 1.5em;
@@ -2019,10 +2033,12 @@ button {
             }
 
             @media (width >= 768px) {
+                margin-top: -0.1em;
                 margin-right: 1.5em;
             }
 
             @media (width >= 1024px) {
+                margin-top: 0.1em;
                 margin-right: 3em;        
             }
 
@@ -2120,7 +2136,7 @@ button {
                 border-radius: 0 .5em .5em 0;
             }
         }
-
+        /* "wrapper" for the email form. - End */
     }
 }
 
@@ -2153,5 +2169,4 @@ button {
             }
         }
     }
-
 }
